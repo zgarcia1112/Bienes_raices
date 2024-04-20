@@ -1,0 +1,99 @@
+.barra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    max-width: 100%;
+    width: 28rem;
+  }
+
+  @include mediaQ($tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mediaQ($tablet) {
+      align-items: end;
+    }
+
+    .dark-mode-boton {
+      width: 3rem;
+      margin: 2rem 0;
+      filter: invert(100%); //invierte el color que tiene aplicado el vector
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include mediaQ($tablet) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.navegacion {
+  //desaparece la navegacion cuando de achica a $tablet.
+  // display: none; //desaparece el elemento
+  visibility: hidden; //lo mismo que display:none pero este elemento si se puede animar
+  opacity: 0;
+  // transition se ocupa para realizar unas animaciones con css
+  transition: visibility 0.3s ease-in-out, opacity 0.5s linear,
+    height 0.5s linear;
+  height: 0;
+
+  @include mediaQ($tablet) {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  a {
+    color: $blanco;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+
+    @include mediaQ($tablet) {
+      margin-right: 2rem;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/******* Menu de hamburguesa ********/
+
+.mobile-menu {
+  @include mediaQ($tablet) {
+    display: none;
+  }
+  img {
+    width: 5rem;
+  }
+}
+
+.mostrar {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+
+  // display: flex;
+  // flex-direction: column;
+
+  // @include mediaQ($tablet) {
+  //   flex-direction: row;
+  // }
+}

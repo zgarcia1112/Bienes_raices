@@ -1,0 +1,22 @@
+{
+  "name": "desarrollo/bienesraices",
+  "description": "Creando un proyecto en POO",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Desarrollo\\Bienesraices\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "zgarcia1112",
+      "email": "zgarcia1112@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "App\\": "./classes"
+    }
+  }
+}

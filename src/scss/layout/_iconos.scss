@@ -1,0 +1,19 @@
+.icono {
+  img {
+    height: 10rem;
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
+.iconos-nosotros {
+  @include mediaQ($tablet) {
+    @include grid(3, 3rem);
+  }
+}

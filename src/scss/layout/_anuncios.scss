@@ -1,0 +1,102 @@
+.anuncio {
+  background-color: lighten($gris, 7);
+  border: 1px solid darken($gris, 3);
+  margin-top: 2rem;
+
+  .imagen-anuncio {
+    object-fit: contain; //Para evitar que la imagen se distorsione
+    height: 50rem;
+  }
+}
+
+@include mediaQ($tablet) {
+  .contenedor-anuncios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .anuncio {
+    margin: 0;
+
+    .imagen-anuncio {
+      object-fit: contain; //Para evitar que la imagen se distorsione
+      height: 25rem;
+    }
+  }
+}
+
+.contenido-anuncio {
+  padding: 2rem;
+
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h3 {
+    text-align: left;
+    font-weight: $bold;
+    //Evitar que el titulo se desborde
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 11rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.precio {
+  color: $verde;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+// @include mediaQ($tablet) {
+//   .descripcion-anuncio {
+//     height: 8rem;
+//   }
+// }
+
+.iconos-caracteristicas {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  max-width: 40rem;
+
+  li {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    img {
+      flex: 0 0 3rem;
+      margin-right: 1rem;
+    }
+
+    p {
+      font-weight: bold;
+    }
+  }
+}
+
+/******* Anuncio ********/
+
+.descripcion-anuncio {
+  text-align: justify;
+}
+
+.unico {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: none;
+}
+
+.imagen-anuncio-unico {
+  height: 50rem;
+  object-fit: contain;
+}
